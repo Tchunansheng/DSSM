@@ -18,7 +18,7 @@ class ResNet(nn.Module):
         152: torchvision.models.resnet152,
     }
 
-    def __init__(self, depth, pretrained=False):
+    def __init__(self, depth, pretrained=True):
         super(ResNet, self).__init__()
         self.pretrained = pretrained
         self.depth = depth
@@ -27,8 +27,8 @@ class ResNet(nn.Module):
         if depth not in ResNet.__factory:
             raise KeyError("Unsupported depth:", depth)
         resnet = ResNet.__factory[depth](pretrained=pretrained)
-        model_path = osp.join(osp.dirname(osp.abspath(__file__)), 'resnet50-19c8e357.pth')
-        resnet.load_state_dict(torch.load(model_path), strict=False)
+        #model_path = osp.join(osp.dirname(osp.abspath(__file__)), 'resnet50-19c8e357.pth')
+        #resnet.load_state_dict(torch.load(model_path), strict=False)
 
         resnet.layer4[0].conv2.stride = (1,1)
         resnet.layer4[0].downsample[0].stride = (1,1)
