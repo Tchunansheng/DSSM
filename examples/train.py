@@ -272,7 +272,7 @@ def main_worker(args):
         if (epoch == args.pretrain_epoch-1):
             save_model(model,osp.join(args.logs_dir, 'model_checkpoint.pth.tar'))
 
-        if epoch<3 or (epoch % 2 ==0 and epoch >39):
+        if epoch % 5 == 0 or epoch==args.epochs-1):
             print('test on target:')
             _,mAP = evaluator_ema.evaluate(test_loader_target, dataset_target.query, dataset_target.gallery, cmc_flag=True)
             best_mAP = max(mAP, best_mAP)
