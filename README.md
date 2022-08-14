@@ -27,7 +27,7 @@
       └───query
    ```
 
-### Training and test DSSM model for person re-ID
+### Train and test DSSM model for person re-ID
 
   ```Shell
   # For Market to Duke
