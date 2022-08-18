@@ -309,11 +309,11 @@ if __name__ == '__main__':
     parser.add_argument('--dataset_target', type=str, default='market')
     parser.add_argument('--eps', type=float, default=0.56)
     parser.add_argument('--low_peak', type=float, default=0.3)
-    parser.add_argument('--high_peak', type=float, default=1.0)
+    parser.add_argument('--high_peak', type=float, default=0.9)
 
     parser.add_argument('--rate_function', type=str, default='gaussian')# gaussian for DSSM; stable for SSSM
-    parser.add_argument('--mean', type=float, default=0.6)
-    parser.add_argument('--std', type=float, default=0.2)
-    parser.add_argument('--with_rmhs', type=str2bool, default=False)
+    parser.add_argument('--mean', type=float, default=0.5)
+    parser.add_argument('--std', type=float, default=0.3)
+    parser.add_argument('--with_rmhs', type=str2bool, default=True)
 
     main()
