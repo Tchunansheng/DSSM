@@ -3,7 +3,6 @@ import warnings
 
 from .dukemtmc import DukeMTMC
 from .market1501 import Market1501
-from .msmt17 import MSMT17
 
 
 __factory = {
